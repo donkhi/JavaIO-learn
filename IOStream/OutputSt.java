@@ -12,7 +12,8 @@ public class OutputSt {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            os = new FileOutputStream(file);
+            //指定写入模式true为追加 false为覆盖
+            os = new FileOutputStream(file,true);
             String s="dklfjdlf";
             byte[] b=s.getBytes();
             os.write(b);
