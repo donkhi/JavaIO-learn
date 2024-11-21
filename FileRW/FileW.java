@@ -17,14 +17,15 @@ public class FileW {
                 FileReader reader = new FileReader(file1);
                 FileWriter writer = new FileWriter(file2)
         ) {
-            char[] buf = new char[1024];
-            int len;
-
-            // 将文件内容从 file1 复制到 file2
-            while ((len = reader.read(buf)) != -1) {
-                writer.write(buf, 0, len);
-            }
-            // 确保写入完成
+//            char[] buf = new char[1024];
+//            int len;
+//
+//            // 将文件内容从 file1 复制到 file2
+//            while ((len = reader.read(buf)) != -1) {
+//                writer.write(buf, 0, len);
+//            }
+//            // 确保写入完成
+            reader.transferTo(writer);
             writer.flush();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
